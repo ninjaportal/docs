@@ -4,6 +4,7 @@ import {sidebar} from "./sidebar.js";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "NinjaPortal",
+  base: "/docs",
   description: "The Official NinjaPortal Documentation ",
   themeConfig: {
     logo: {
@@ -21,6 +22,5 @@ export default defineConfig({
     outline: {
       level: "deep"
     }
-  },
-  outDir: "dist"
+  }
 })

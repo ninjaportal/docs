@@ -1,7 +1,4 @@
 node_modules/
-dist/
-yarn.lock
-package-lock.json
 .vitepress/cache
 .vitepress/dist
 dist/

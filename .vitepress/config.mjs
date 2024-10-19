@@ -22,5 +22,5 @@ export default defineConfig({
       level: "deep"
     }
   },
-  outDir: "../dist"
+  outDir: "dist"
 })

@@ -20,7 +20,7 @@ This method returns the entity with the given id.
 
 ```php
 use NinjaPortal\Portal\Services\ApiProductService;
-$apiProduct = (new ApiProductService())->find(1);
+$apiProduct = (new ApiProductService())->find($id);
 ```
 
 ### `create(array $data)`
@@ -28,7 +28,7 @@ This method creates a new entity with the given data.
 ```$data``` is an associative array that contains the data of the entity.
 ```php
 use NinjaPortal\Portal\Services\ApiProductService;
-$apiProduct = (new ApiProductService())->create([$data]);
+$apiProduct = (new ApiProductService())->create($data);
 ```
 
 ### `update(int|Model $id, array $data)`
@@ -36,14 +36,14 @@ This method updates the entity with the given id with the given data.
 ```$data``` is an associative array that contains the data of the entity.
 ```php
 use NinjaPortal\Portal\Services\ApiProductService;
-$apiProduct = (new ApiProductService())->update(1, [$data]);
+$apiProduct = (new ApiProductService())->update($id, $data);
 ```
 
 ### `delete(int $id)`
 This method deletes the entity with the given id.
 ```php
 use NinjaPortal\Portal\Services\ApiProductService;
-(new ApiProductService())->delete(1);
+(new ApiProductService())->delete($id);
 ```
 
 

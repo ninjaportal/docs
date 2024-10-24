@@ -42,6 +42,10 @@ export const sidebar = [
             {
                 text: "Translation",
                 link: "/core/concepts/translation",
+            },
+            {
+                text: "Roles & Permissions",
+                link: '/core/concepts/rbac'
             }
         ]
     },

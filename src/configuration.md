@@ -1,37 +1,43 @@
-# Configurations
+# Configuration
 
-## LaraApigee Configuration
-Since the ninja portal is built on top of the LaraApigee package for communicating with Apigee, you will need to configure the package to work with your Apigee environment.
+<!-- [[toc]] -->
 
-Refer to the [LaraApigee documentation](https://lordjoo.github.io/laraapigee/getting-started.html#configuration) for more information on how to configure the package.
+## Introduction
+Ninja Portal leverages Laravel's configuration system for maximum flexibility. You may customize both the core portal and any installed add-ons to suit your environment.
 
-## NinjaPortal Configuration
+## Quick Example: Publishing Configuration
 
-First, you will need to publish the configuration file by running the following command:
-```bash
-php artisan vendor:publish --provider="NinjaPortal\Portal\PortalServiceProvider" --tag="config"
+Let's publish the Ninja Portal configuration file:
+
+```shell
+php artisan vendor:publish --provider="NinjaPortal\Portal\PortalServiceProvider" --tag="ninjaportal-config"
 ```
 
-### ```apigee_platform```
-this sets the type of apigee platform you are using, it can be either `edge` or `apigeex`.
+::: tip
+You may review the published `config/ninjaportal.php` file for all available options.
+:::
 
-### ```settings```
-#### ```settings.cache.enabled```
-Enable cache for settings, this will cache the settings in the cache driver to reduce the number of requests to the database.
+## LaraApigee Configuration
+Ninja Portal uses the [LaraApigee package](https://github.com/lordjoo/laraapigee) to communicate with Apigee. You should configure LaraApigee according to your Apigee environment. See the [LaraApigee documentation](https://lordjoo.github.io/laraapigee/getting-started.html#configuration) for details.
 
-#### ```settings.cache.ttl```
-The time to live for the cache in minutes.
+## Ninja Portal Configuration Options
 
-#### ```settings.cache.key```
-The key to use for the cache.
+### `apigee_platform`
+Set the Apigee platform type: `edge` or `apigeex`.
 
-### ```translations```
-Since the ninjaportal ships with translations solution for the portal content and any other content that needs to be translated, you can configure the translations settings here.
+### `settings`
+- `settings.cache.enabled`: Enable or disable caching for settings.
+- `settings.cache.ttl`: Cache time-to-live (minutes).
+- `settings.cache.key`: Cache key name.
 
-#### ```translations.with_fallback```
-Whether to use the fallback locale when the current locale is not available.
+### `translations`
+- `translations.with_fallback`: Use fallback locale if the current locale is unavailable.
+- `translations.fallback_locale`: Fallback locale code.
 
-#### ```translations.fallback_locale```
-The fallback locale to use when the current locale is not available.
+---
+
+For add-on configuration, see:
+- [Shadow Theme Configuration](./addons/shadow/configuration.md)
+- [NinjaAdmin Configuration](./addons/ninjaadmin/configuration.md) <!-- Add this link when NinjaAdmin docs are available -->
 
 

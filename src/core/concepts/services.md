@@ -1,52 +1,38 @@
-# NinjaServices
-We use service pattern to handle the portal operations on the portal entities,
-the services are responsible for the business logic of the portal, and they are the only classes that can interact with the database.
+# Ninja Services
 
-We have a service for each entity in the portal, and each service has a set of methods that can be used to interact with the entity.
-Each service is an implementation of the `ServiceInterface` interface and extends the `BaseService` class.
+<!-- [[toc]] -->
 
-## BaseService methods 
+## Introduction
+Ninja Portal uses the [Service Pattern](https://en.wikipedia.org/wiki/Service_layer_pattern) to encapsulate business logic for portal entities. Services provide a convenient way to interact with your data and keep your controllers clean.
 
-### `all()`
-This method returns all the entities of the service.
+## Quick Example: Fetching All API Products
+
+Let's retrieve all API products using the service:
 
 ```php
-use NinjaPortal\Portal\Services\ApiProductService;  
+<?php
+use NinjaPortal\Portal\Services\ApiProductService;
+
 $apiProducts = (new ApiProductService())->all();
 ```
 
-### `find($id)`
-This method returns the entity with the given id.
+## BaseService Methods
 
-```php
-use NinjaPortal\Portal\Services\ApiProductService;
-$apiProduct = (new ApiProductService())->find($id);
-```
+### `all()`
+Return all entities for the service.
+
+### `find($id)`
+Return the entity with the given ID.
 
 ### `create(array $data)`
-This method creates a new entity with the given data.
-```$data``` is an associative array that contains the data of the entity.
-```php
-use NinjaPortal\Portal\Services\ApiProductService;
-$apiProduct = (new ApiProductService())->create($data);
-```
+Create a new entity with the provided data.
 
 ### `update(int|Model $id, array $data)`
-This method updates the entity with the given id with the given data.
-```$data``` is an associative array that contains the data of the entity.
-```php
-use NinjaPortal\Portal\Services\ApiProductService;
-$apiProduct = (new ApiProductService())->update($id, $data);
-```
+Update the entity with the given ID and data.
 
 ### `delete(int $id)`
-This method deletes the entity with the given id.
-```php
-use NinjaPortal\Portal\Services\ApiProductService;
-(new ApiProductService())->delete($id);
-```
-
+Delete the entity with the given ID.
 
 ::: tip
-Check the portal API reference to see the available services and their methods.
+You may extend or override service methods as needed. See [Extending Services](../development/extending-services.md).
 :::

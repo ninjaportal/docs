@@ -1,37 +1,47 @@
 # Events
-NinjaPortal uses an event based architecture to allow adding custom logic to the portal. The events are triggered at different points in the portal lifecycle, and you can listen to these events and add your custom logic to them.
 
-## Available Events
-The following events are available in the portal:
+<!-- [[toc]] -->
 
-- `UserAppCreatedEvent`
-- `UserAppCredentialApproved`
-- `UserAppCredentialCreated`
-- `UserAppCredentialDeleted`
-- `UserAppCredentialProductAdded`
-- `UserAppCredentialProductRemoved`
-- `UserAppCredentialRevoked`
-- `UserAppDeletedEvent`
-- `UserAppUpdatedEvent`
-- `UserCreatedEvent`
-- `UserDeletedEvent`
-- `UserResetPasswordEvent`
-- `UserUpdatedEvent`
+## Introduction
+Ninja Portal uses an [event-driven architecture](https://en.wikipedia.org/wiki/Event-driven_architecture), allowing you to hook into key lifecycle moments and add custom logic. Laravel makes it easy to listen for and handle events.
 
-## Listening to Events
-In the ```NinjaPortalServiceProvider``` class, you can listen to the events by adding the event listeners to the ```$listen``` property.
+## Quick Example: Listening to an Event
+
+Let's listen for the `UserCreatedEvent` in your service provider:
 
 ```php
+<?php
 namespace App\Providers;
 
-class NinjaPortalServiceProvider extends Provider
+use Illuminate\Support\ServiceProvider;
+use NinjaPortal\Portal\Events\UserCreatedEvent;
+use App\Listeners\WelcomeEmailListener;
+
+class NinjaPortalServiceProvider extends ServiceProvider
 {
-    // ...
     protected $listen = [
-        Events\UserCreatedEvent::class => [
-            App\Listeners\WelcomeEmailListener::class,
-        ]
+        UserCreatedEvent::class => [
+            WelcomeEmailListener::class,
+        ],
     ];
-    // ...
 }
 ```
+
+## Available Events
+- `NinjaPortal\Portal\Events\UserAppCreatedEvent`
+- `NinjaPortal\Portal\Events\UserAppCredentialApproved`
+- `NinjaPortal\Portal\Events\UserAppCredentialCreated`
+- `NinjaPortal\Portal\Events\UserAppCredentialDeleted`
+- `NinjaPortal\Portal\Events\UserAppCredentialProductAdded`
+- `NinjaPortal\Portal\Events\UserAppCredentialProductRemoved`
+- `NinjaPortal\Portal\Events\UserAppCredentialRevoked`
+- `NinjaPortal\Portal\Events\UserAppDeletedEvent`
+- `NinjaPortal\Portal\Events\UserAppUpdatedEvent`
+- `NinjaPortal\Portal\Events\UserCreatedEvent`
+- `NinjaPortal\Portal\Events\UserDeletedEvent`
+- `NinjaPortal\Portal\Events\UserResetPasswordEvent`
+- `NinjaPortal\Portal\Events\UserUpdatedEvent`
+
+::: tip
+You may create your own event listeners to extend portal functionality.
+:::

@@ -28,7 +28,7 @@ export const sidebar = [
                 link: "/core/concepts/architecture"
             },
             {
-                text: 'DB Models',
+                text: 'Models',
                 link: '/core/concepts/models'
             },
             {
@@ -66,7 +66,7 @@ export const sidebar = [
         text: "Shadow (Frontend)",
         items: [
             {
-                text: "Installation",
+                text: "Shadow Theme Installation",
                 link: "/addons/shadow/installation"
             },
             {

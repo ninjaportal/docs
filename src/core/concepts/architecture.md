@@ -1,14 +1,36 @@
-# Architecture of the NinjaPortal 
-The ninjaportal is complete solution with a modular architecture,
-the core of the ninjaportal is the portal package which is responsible for the core functionality of the portal,
-the portal package is built on top of the Laravel framework and it is a composer package that can be installed in any Laravel project. 
-also the portal package uses a library built by the authors called [```laraapigee```](https://github.com/lordjoo/laraapigee) to be used as the client to communicate with the Apigee management API.
+# Architecture
 
-besides the portal package, the ninjaportal has a set of add-ons that can be installed to extend the functionality of the portal,
-the add-ons are also composer packages that can be installed in any Laravel project but they are dependent on the portal package.
-<br/>
+<!-- [[toc]] -->
+
+## Introduction
+Ninja Portal features a modular architecture built on Laravel, making it easy to extend and customize. The core package provides essential portal functionality, while add-ons allow you to enhance features as needed.
+
+At its core, the Ninja Portal is a complete solution designed around the `ninjaportal/portal` package, which provides all core features and acts as the backbone of the system. It is built on top of the Laravel framework and can be installed as a Composer package in any Laravel project.
+
+The core package also integrates with a dedicated library called [`laraapigee`](https://github.com/lordjoo/laraapigee), developed by the authors, which serves as the client to communicate with the Apigee Management API.
+
+## Quick Example: Core and Add-ons
+
+The core package is installed via Composer:
+
+```shell
+composer require ninjaportal/portal
+````
+
+Add-ons, such as the Shadow theme, may be installed as needed:
+
+```shell
+composer require ninjaportal/shadow-theme
+```
+
+## Architecture Overview
 
 ![Architecture of the NinjaPortal](arch.jpg)
 
-As shown in the diagram above, the portal package is the core of the ninjaportal, it is responsible for the core functionality of the portal, and providing all support functions for the add-ons and any other customizations that can be added to the portal.
+The `ninjaportal/portal` package is the foundation of Ninja Portal. It is responsible for providing all core functionality and supporting add-ons and any other customizations.
 
+Add-ons are also Composer packages that can be installed in any Laravel project; they depend on the core portal package and provide extended functionality. You may install official add-ons or develop your own based on project requirements.
+
+::: tip
+You may extend the portal by creating your own add-ons or customizing existing ones.
+:::

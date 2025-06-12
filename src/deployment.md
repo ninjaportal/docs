@@ -39,6 +39,10 @@ You should review your `.env` file and set production values before deploying.
 - Caching strategies
 - SSL and security best practices
 
+::: tip
+Enterprise clients can request deployment automation, CI/CD integration, and managed hosting from the Ninja Portal team. Contact [sales@ninjaportal.net](mailto:sales@ninjaportal.net).
+:::
+
 ---
 
-For more details, see the [Laravel Deployment Guide](https://laravel.com/docs/deployment).
+For more details, see the [Laravel Deployment Guide](https://laravel.com/docs/deployment)

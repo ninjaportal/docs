@@ -163,3 +163,7 @@ For more on using translations in the portal, see the [Translation Documentation
 This approach allows you to extend the models provided by the portal package and customize them with additional fields, methods, or relationships as needed, ensuring seamless integration with the existing structure.
 
 Once done, you should test your extended models to confirm the new fields and behavior work as expected.
+
+::: tip
+Ninja Portal provides enterprise guidance for model and service extension, including code reviews and best practices.
+:::

@@ -39,3 +39,7 @@ we are using a predefined permission prefixes for the models shipped with the po
 ::: tip
 You may override permission prefixes in your configuration file.
 :::
+
+::: tip
+Ninja Portal offers enterprise-grade RBAC consulting, policy audits, and custom permission strategies for large organizations.
+:::

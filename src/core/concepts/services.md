@@ -36,3 +36,7 @@ Delete the entity with the given ID.
 ::: tip
 You may extend or override service methods as needed. See [Extending Services](../development/extending-services.md).
 :::
+
+::: tip
+Enterprise support includes custom service development, business logic consulting, and integration with legacy systems.
+:::

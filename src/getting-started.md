@@ -35,4 +35,8 @@ php artisan portal:install
 - Composer
 - Laravel 11.x
 
+::: tip
+Need advanced customization, integration, or priority support? Ninja Portal offers enterprise consulting and support services—contact us at [sales@ninjaportal.net](mailto:sales@ninjaportal.net).
+:::
+
 

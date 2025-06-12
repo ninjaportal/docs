@@ -169,3 +169,7 @@ The `User` model represents a system user aka `developer`, extending the `Authen
 ---
 
 For more details on extending models, see [Extending Models](../development/extending-models.md).
+
+::: tip
+For enterprise clients, Ninja Portal provides advanced data modeling, migration support, and custom model design consulting. Contact us at [sales@ninjaportal.net](mailto:sales@ninjaportal.net).
+:::

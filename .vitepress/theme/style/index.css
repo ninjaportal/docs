@@ -9,3 +9,8 @@
     --content-width: 940px;
     --homepage-width: 960px;
 }
+
+.vp-doc table {
+    display: table;
+    width: 100% !important;
+}

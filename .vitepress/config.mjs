@@ -4,7 +4,7 @@ import {sidebar} from "./sidebar.js";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "NinjaPortal",
-  base: "/docs",
+  base: "/",
   description: "The Official NinjaPortal Documentation ",
   themeConfig: {
     logo: {

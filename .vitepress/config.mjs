@@ -5,6 +5,7 @@ import {sidebar} from "./sidebar.js";
 export default defineConfig({
   title: "NinjaPortal",
   base: "/",
+  ignoreDeadLinks: true,
   description: "The Official NinjaPortal Documentation ",
   themeConfig: {
     logo: {

@@ -38,6 +38,6 @@ Set the Apigee platform type: `edge` or `apigeex`.
 
 For add-on configuration, see:
 - [Shadow Theme Configuration](./addons/shadow/configuration.md)
-- [NinjaAdmin Configuration](./addons/ninjaadmin/configuration.md) <!-- Add this link when NinjaAdmin docs are available -->
+- [NinjaAdmin Configuration](addons/ninjaadmin/index.md) <!-- Add this link when NinjaAdmin docs are available -->
 
 

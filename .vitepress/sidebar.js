@@ -97,11 +97,11 @@ export const sidebar = [
         items: [
             {
                 text: "Installation",
-                link: "/addons/ninjaadmin/installation"
+                link: "/addons/ninjaadmin/index#installation"
             },
             {
                 text: "Configuration",
-                link: "/addons/ninjaadmin/configuration"
+                link: "/addons/ninjaadmin/index#configuration"
             },
             {
                 text: "Development",

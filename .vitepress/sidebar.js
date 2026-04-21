@@ -33,6 +33,8 @@ export const sidebar = [
       { text: 'References Overview', link: '/references/' },
       { text: 'Package Matrix', link: '/reference/package-matrix' },
       { text: 'Core Package Reference: Portal', link: '/portal/' },
+      { text: 'Portal DB Modelling', link: '/portal/db-modelling' },
+      { text: 'Portal How to Use', link: '/portal/how-to-use' },
       { text: 'Core Package Reference: Portal API', link: '/portal-api/' },
       { text: 'Database Schema (Detailed)', link: '/reference/database-schema' },
       { text: 'Events Catalog', link: '/reference/events' },

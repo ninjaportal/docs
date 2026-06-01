@@ -15,8 +15,9 @@ Then copy the `.env.example` file to `.env` and update the database configuratio
 ```bash
 cp .env.example .env
 ```
-Finally, run the following command to start the development server
+Now seed the database with the default settings and RBAC roles and permissions, and start the development server.
 ```bash
+php artisan portal:seed --settings --rbac # Seed the database with default settings and RBAC roles and permissions
 php artisan serve
 ```
 
@@ -24,7 +25,7 @@ php artisan serve
 If you want to add NinjaPortal to your existing Laravel project, just install the ```ninjaportal/portal``` package via composer and follow the configuration steps in the documentation.
 :::
 
-he kickstart contains the basic setup of NinjaPortal, including the ```shadow-theme``` package, which is a simple and clean theme that you can use as a starting point for your portal,
+The kickstart contains the basic setup of NinjaPortal, including the ```shadow-theme``` package, which is a simple and clean theme that you can use as a starting point for your portal,
 also it's packed with a [Filament admin panel](https://filamentphp.com).
 
 

@@ -1,3 +1,8 @@
+::: warning
+The documentation is still a work in progress, and we are actively working on it, if you have any questions or need help, please don't
+hesitate to reach out to us on our [GitHub repository](https://github.com/ninjaportal/docs)
+:::
+
 # Introduction
 NinjaPortal is a Laravel based developer portal that's built for Apigee API Management, 
 It provides an enterprise grade ready solution that's easy to be customized and extended to meet your needs.

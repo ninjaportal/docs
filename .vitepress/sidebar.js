@@ -6,45 +6,43 @@ export const sidebar = [
       { text: 'Overview', link: '/' },
       { text: 'Getting Started', link: '/introduction/getting-started' },
       { text: 'Configuration', link: '/introduction/configuration' },
-      { text: 'DB Design', link: '/introduction/db-design' },
-      { text: 'How to Use', link: '/introduction/how-to-use' },
-      { text: 'Apigee Backed Operations', link: '/introduction/apigee-backed-operations' },
-      { text: 'Translations', link: '/introduction/translations' },
-      { text: 'RBAC & Policies', link: '/introduction/rbac-policies' },
-      { text: 'API', link: '/introduction/api' },
-      { text: 'Authentication & Authorization', link: '/introduction/authentication-authorization' }
     ]
   },
   {
-    text: 'Deepdive',
+    text: "Core",
     collapsed: false,
     items: [
-      { text: 'Overview', link: '/deepdive/' },
-      { text: 'Extending the Portal', link: '/deepdive/extending-the-portal' },
-      { text: 'Add Custom Auth Flow', link: '/deepdive/custom-auth-flow' },
-      { text: 'Utilities', link: '/deepdive/utilities' },
-      { text: 'Cookbook', link: '/cookbook/' }
+        { text: 'Concepts', link: '/core/concepts' },
+        { text: 'DB Design', link: '/core/db-design' },
+        { text: 'Events', link: '/core/events' },
+        { text: 'How To Use', link: '/core/how-to-use' },
+        { text: 'Auth', link: '/core/auth' },
+    ]
+  },
+  {
+    text: 'Portal API',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/portal-api/' },
+      { text: 'Installation', link: '/portal-api/installation' },
+      { text: 'How To Use', link: '/portal-api/how-to-use' },
+      { text: 'Authentication', link: '/portal-api/authentication' },
+    ]
+  },
+  {
+    text: 'Shadow Theme',
+    collapsed: false,
+    items: [
+      { text: 'Overview', link: '/shadow-theme/' },
+      { text: 'Installation', link: '/shadow-theme/installation' },
+      { text: 'How To Use', link: '/shadow-theme/how-to-use' },
+      { text: 'Customization', link: '/shadow-theme/customization' },
+      { text: 'Authentication', link: '/shadow-theme/authentication' },
     ]
   },
   {
     text: 'References',
     collapsed: false,
-    items: [
-      { text: 'References Overview', link: '/references/' },
-      { text: 'Package Matrix', link: '/reference/package-matrix' },
-      { text: 'Core Package Reference: Portal', link: '/portal/' },
-      { text: 'Core Package Reference: Portal API', link: '/portal-api/' },
-      { text: 'Database Schema (Detailed)', link: '/reference/database-schema' },
-      { text: 'Events Catalog', link: '/reference/events' },
-      { text: 'Listeners & Observers', link: '/reference/listeners-observers' },
-      { text: 'Portal API Scribe & API Docs', link: '/portal-api/scribe' },
-      { text: 'Environment Variables', link: '/configuration/env-reference' },
-      { text: 'Config Reference: Portal', link: '/portal/config-reference' },
-      { text: 'Config Reference: Portal API', link: '/portal-api/config-reference' },
-      { text: 'Optional Package Reference: Portal MFA', link: '/portal-mfa/' },
-      { text: 'Optional Config (Portal MFA)', link: '/configuration/portal-mfa' },
-      { text: 'Deployment', link: '/deployment' },
-      { text: 'Legacy Config Overview', link: '/configuration' }
-    ]
+    items: []
   }
 ]

@@ -1,0 +1,202 @@
+<svg width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="portal-erd-title portal-erd-desc" xmlns="http://www.w3.org/2000/svg">
+    <title id="portal-erd-title">NinjaPortal core package database ERD</title>
+    <desc id="portal-erd-desc">Entity relationship diagram for the portal package database schema.</desc>
+
+    <defs>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M0,0 L10,5 L0,10 Z" fill="currentColor" />
+        </marker>
+        <filter id="soft-shadow" x="-10%" y="-10%" width="120%" height="130%">
+            <feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity="0.12" />
+        </filter>
+    </defs>
+    <style>
+        :root {
+            --erd-bg: #f8fafc;
+            --erd-panel: #ffffff;
+            --erd-panel-soft: #f1f5f9;
+            --erd-text: #172033;
+            --erd-muted: #64748b;
+            --erd-border: #d7dee8;
+            --erd-brand: #e58f2a;
+            --erd-join: #fff5e8;
+            --erd-line: #9aa8ba;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --erd-bg: #111318;
+                --erd-panel: #181b22;
+                --erd-panel-soft: #20242d;
+                --erd-text: #f3f4f6;
+                --erd-muted: #a1a9b5;
+                --erd-border: #343946;
+                --erd-brand: #f2993d;
+                --erd-join: #2a231a;
+                --erd-line: #737c8b;
+            }
+        }
+
+        svg {
+            background: var(--erd-bg);
+        }
+
+        .cluster rect {
+            fill: var(--erd-panel-soft);
+            stroke: var(--erd-border);
+        }
+
+        .cluster-title {
+            fill: var(--erd-text);
+            font: 700 18px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .entity rect,
+        .join rect {
+            filter: url(#soft-shadow);
+            stroke: var(--erd-border);
+            fill: var(--erd-panel);
+        }
+
+        .entity.primary rect {
+            stroke: var(--erd-brand);
+            stroke-width: 2;
+        }
+
+        .entity.muted rect {
+            fill: var(--erd-panel-soft);
+            filter: none;
+        }
+
+        .join rect {
+            fill: var(--erd-join);
+            stroke-dasharray: 5 4;
+        }
+
+        text {
+            fill: var(--erd-text);
+            font: 650 15px ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .hint {
+            fill: var(--erd-muted);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .line {
+            fill: none;
+            stroke: var(--erd-line);
+            stroke-width: 2;
+            marker-end: url(#arrow);
+        }
+
+        #arrow path {
+            fill: var(--erd-line);
+        }
+    </style>
+
+    <g class="cluster">
+        <rect x="30" y="36" width="314" height="214" rx="16" />
+        <text x="54" y="72" class="cluster-title">Identity</text>
+        <g class="entity">
+            <rect x="54" y="96" width="126" height="68" rx="10" />
+            <text x="78" y="137">users</text>
+        </g>
+        <g class="entity">
+            <rect x="194" y="96" width="126" height="68" rx="10" />
+            <text x="216" y="137">admins</text>
+        </g>
+        <g class="entity muted">
+            <rect x="54" y="180" width="266" height="42" rx="10" />
+            <text x="82" y="207">sessions / password reset tokens</text>
+        </g>
+    </g>
+
+    <g class="cluster">
+        <rect x="378" y="36" width="748" height="424" rx="16" />
+        <text x="402" y="72" class="cluster-title">Catalog and Access Targeting</text>
+
+        <g class="entity primary">
+            <rect x="684" y="92" width="190" height="82" rx="12" />
+            <text x="720" y="126">api_products</text>
+            <text x="712" y="150" class="hint">Apigee-linked catalog</text>
+        </g>
+
+        <g class="entity">
+            <rect x="432" y="98" width="160" height="68" rx="10" />
+            <text x="478" y="139">categories</text>
+        </g>
+        <g class="entity">
+            <rect x="420" y="212" width="184" height="58" rx="10" />
+            <text x="448" y="247">category_translations</text>
+        </g>
+
+        <g class="entity">
+            <rect x="958" y="98" width="138" height="68" rx="10" />
+            <text x="986" y="139">audiences</text>
+        </g>
+
+        <g class="entity">
+            <rect x="668" y="224" width="224" height="58" rx="10" />
+            <text x="696" y="259">api_product_translations</text>
+        </g>
+
+        <g class="join">
+            <rect x="610" y="336" width="190" height="48" rx="10" />
+            <text x="638" y="366">api_product_category</text>
+        </g>
+        <g class="join">
+            <rect x="830" y="336" width="190" height="48" rx="10" />
+            <text x="858" y="366">api_product_audience</text>
+        </g>
+        <g class="join">
+            <rect x="958" y="212" width="138" height="48" rx="10" />
+            <text x="986" y="242">audience_user</text>
+        </g>
+    </g>
+
+    <g class="cluster">
+        <rect x="30" y="500" width="550" height="214" rx="16" />
+        <text x="54" y="536" class="cluster-title">Navigation</text>
+        <g class="entity">
+            <rect x="70" y="570" width="132" height="68" rx="10" />
+            <text x="112" y="611">menus</text>
+        </g>
+        <g class="entity">
+            <rect x="254" y="570" width="142" height="68" rx="10" />
+            <text x="286" y="611">menu_items</text>
+        </g>
+        <g class="entity">
+            <rect x="428" y="570" width="126" height="68" rx="10" />
+            <text x="444" y="604">menu_item</text>
+            <text x="444" y="622">translations</text>
+        </g>
+    </g>
+
+    <g class="cluster">
+        <rect x="622" y="500" width="504" height="214" rx="16" />
+        <text x="646" y="536" class="cluster-title">Configuration</text>
+        <g class="entity">
+            <rect x="690" y="570" width="168" height="68" rx="10" />
+            <text x="722" y="611">setting_groups</text>
+        </g>
+        <g class="entity">
+            <rect x="922" y="570" width="132" height="68" rx="10" />
+            <text x="956" y="611">settings</text>
+        </g>
+    </g>
+
+    <path class="line" d="M592 132 H684" />
+    <path class="line" d="M874 132 H958" />
+    <path class="line" d="M1027 166 V212" />
+    <path class="line" d="M180 130 C310 130 314 236 420 241" />
+    <path class="line" d="M512 166 V212" />
+    <path class="line" d="M779 174 V224" />
+    <path class="line" d="M705 336 V174" />
+    <path class="line" d="M800 360 H830" />
+    <path class="line" d="M925 336 V166" />
+    <path class="line" d="M202 604 H254" />
+    <path class="line" d="M396 604 H428" />
+    <path class="line" d="M858 604 H922" />
+</svg>
